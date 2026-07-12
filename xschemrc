@@ -1,0 +1,29 @@
+# ============================================================================
+# Project xschemrc for the GF180 NPN testbenches.
+# Ensures xschem finds (1) its stock 'devices/' symbols, (2) the GF180 PDK
+# symbols, and (3) this project's own symbols.
+# ============================================================================
+
+# --- PDK root (edit if different) ---
+if {![info exists env(PDK_ROOT)]} { set env(PDK_ROOT) /home/ellis/pdk }
+set PDK_ROOT $env(PDK_ROOT)
+
+# (1)+(2): prefer the GF180 PDK's own xschemrc -- it wires up the stock library
+# AND the PDK device symbols for your exact install.
+set _pdkrc $PDK_ROOT/gf180mcuC/libs.tech/xschem/xschemrc
+if {[file exists $_pdkrc]} {
+    source $_pdkrc
+} else {
+    # fallback: probe common stock-library locations
+    set _cands {}
+    if {[info exists env(XSCHEM_SHAREDIR)]} { lappend _cands $env(XSCHEM_SHAREDIR)/xschem_library }
+    lappend _cands /usr/share/xschem/xschem_library
+    lappend _cands /usr/local/share/xschem/xschem_library
+    foreach d $_cands { if {[file isdirectory $d]} { append XSCHEM_LIBRARY_PATH :$d } }
+}
+
+# (3): this project's directory (where these .sym/.sch live)
+append XSCHEM_LIBRARY_PATH :[file dirname [info script]]
+
+set netlist_dir [file dirname [info script]]
+set netlist_type spice
