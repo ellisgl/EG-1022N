@@ -1,0 +1,7 @@
+* NGSPICE file created from NPN_BJT_SYMBOL_TRANSISTOR.ext - technology: gf180mcuC
+
+.subckt NPN_BJT_SYMBOL_TRANSISTOR c b e s
+X0 c b e s npn_10p00x10p00
+**devattr d=43928800,29840
+.ends
+

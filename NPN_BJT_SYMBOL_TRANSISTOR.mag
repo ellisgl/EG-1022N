@@ -1,7 +1,7 @@
 magic
 tech gf180mcuC
 magscale 1 10
-timestamp 1783806842
+timestamp 1783956948
 << deepnwell >>
 rect -287 3729 287 3730
 rect -299 3728 299 3729
@@ -61705,12 +61705,12 @@ rect -155 -3987 155 -3986
 rect -126 -3988 126 -3987
 rect -89 -3989 89 -3988
 << labels >>
-rlabel metal1 3810 10 3990 90 0 s
-port 4 nsew
-rlabel metal1 -3210 -40 -3030 40 0 b
-port 2 nsew
 rlabel metal1 2140 2660 2240 2760 0 c
 port 1 nsew
 rlabel metal1 1890 -2180 1990 -2080 0 e
 port 3 nsew
+rlabel metal1 3870 -90 3930 90 0 s
+port 0 nsew
+rlabel metal1 -3150 -30 -200 30 0 b
+port 2 nsew
 << end >>
