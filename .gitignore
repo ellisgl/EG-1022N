@@ -1,1 +1,4 @@
 .codebase-memory/
+__pycache__/
+sim/out/
+gen/*_masks.npz
