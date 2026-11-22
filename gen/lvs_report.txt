@@ -1,0 +1,38 @@
+
+Circuit 1 cell npn_00p54x16p00 and Circuit 2 cell npn_00p54x16p00 are black boxes.
+Warning: Equate pins:  cell npn_00p54x16p00 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell npn_00p54x16p00 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: npn_00p54x16p00                 |Circuit 2: npn_00p54x16p00                 
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes npn_00p54x16p00 and npn_00p54x16p00 are equivalent.
+
+Subcircuit summary:
+Circuit 1: EG1022N_V2                      |Circuit 2: EG1022N_V2                      
+-------------------------------------------|-------------------------------------------
+npn_00p54x16p00 (1)                        |npn_00p54x16p00 (1)                        
+Number of devices: 1                       |Number of devices: 1                       
+Number of nets: 4                          |Number of nets: 4                          
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: EG1022N_V2                      |Circuit 2: EG1022N_V2                      
+-------------------------------------------|-------------------------------------------
+c                                          |c                                          
+b                                          |b                                          
+e                                          |e                                          
+s                                          |s                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes EG1022N_V2 and EG1022N_V2 are equivalent.
+
+Final result: Circuits match uniquely.
+.

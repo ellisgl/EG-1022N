@@ -1,0 +1,13 @@
+* NGSPICE file created from EG1022N_V2.ext - technology: gf180mcuC
+
+.subckt EG1022N_V2 c b e s
+X0 c b e s npn_00p54x16p00
+**devattr s=346852,5955 d=11974822,19457
+C0 c b 3.32145f
+C1 c e 0.01487f
+C2 b e 0.52785f
+C3 e s 1.22424f
+C4 b s 3.44095f
+C5 c s 4.87762f
+.ends
+

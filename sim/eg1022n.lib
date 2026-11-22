@@ -1,0 +1,30 @@
+* EG-1022N geometry-scaled models (generated). Requires bjt_typical + diode_typical libs.
+.subckt eg1022n c b e s
+Q0 c b e s eg1022n_q
+Dstripe b c diode_nd2ps_06v0 area=8.32e-12 pj=3e-05
+.model eg1022n_q npn level=1 tref=25
++ is='8.5223e-19*is_cor_npn' bf='8.6*bf_cor_npn' nf=1.001 vaf=42 ikf=3.5733e-03 nkf=0.584
++ ise=1.2581e-16 ne=1.48 br=0.07 nr=0.998 var=25.2 ikr=0.0038951 isc=4.7379e-16 nc=1.284
++ rb='211*rb_cor_npn' irb=0.00045303 rbm='201*rb_cor_npn' re='15*re_cor_npn' rc='26*rc_cor_npn'
++ cje='4.1278e-15*cje_cor_npn' vje=0.70172 mje=0.32071 cjc='3.3089e-13*cjc_cor_npn' vjc=0.63391 mjc=0.31113 xcjc=1
++ cjs=3.3728e-13 vjs=0.35175 mjs=0.14716 subs=1 iss=2.3150e-15
++ xtb=0 xti=3 eg=1.17 tnf1=5e-5 tnr1=1e-4 tne1=4e-4 tbf1=0.0058206 tbr1=0.0009 tbf2=-6.2e-7 af=1 kf=0
+.ends
+* As drawn: emitter n+ butted to base p+ under continuous salicide -> E-B short
+.subckt eg1022n_asdrawn c b e s
+Xq c b e s eg1022n
+Rsil e b 5
+.ends
+
+* EG-1022N v2 (strokes layout, gen/EG1022N_V2.mag). Emitter = npn_00p54x16p00 family;
+* C_BC/C_CS scaled to the drawn P-base/DNWELL; RB/RC ratio-scaled from the stock cell.
+.subckt eg1022n_v2 c b e s
+Q0 c b e s eg1022n_v2_q
+.model eg1022n_v2_q npn level=1 tref=25
++ is='2.7657e-18*is_cor_npn' bf='8.4987*bf_cor_npn' nf=1.001 vaf=37.389 ikf=1.2927e-02 nkf=0.584
++ ise=4.6626e-16 ne=1.48 br=0.079582 nr=0.998 var=25.2 ikr=0.0038951 isc=2.0790e-16 nc=1.284
++ rb='161.0*rb_cor_npn' irb=0.00045303 rbm='1.0*rb_cor_npn' re='14.121*re_cor_npn' rc='14.1*rc_cor_npn'
++ cje='1.3024e-14*cje_cor_npn' vje=0.70172 mje=0.32071 cjc='6.5014e-14*cjc_cor_npn' vjc=0.63391 mjc=0.31113 xcjc=1
++ cjs=1.3925e-13 vjs=0.35175 mjs=0.14716 subs=1 iss=6.9639e-16
++ xtb=0 xti=3 eg=1.17 tnf1=5e-5 tnr1=1e-4 tne1=4e-4 tbf1=0.0058206 tbr1=0.0009 tbf2=-6.2e-7 af=1 kf=0
+.ends

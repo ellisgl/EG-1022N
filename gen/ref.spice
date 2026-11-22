@@ -1,0 +1,4 @@
+* reference schematic: one stock-model VNPN
+.subckt EG1022N_V2 c b e s
+X0 c b e s npn_00p54x16p00
+.ends
