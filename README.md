@@ -1,6 +1,8 @@
 # EG-1022N (Magic VLSI)
 A BJT NPN transistor, whose layout resembles its electronics symbol. Made in Magic using the GlobalFoundries GF180MCU PDK.
 
+The PNP complement is [EG-1022P](https://github.com/ellisgl/EG-1022P).
+
 ## V2 layout
 
 ![V2 layout](gen/EG1022N_V2_preview.png)
