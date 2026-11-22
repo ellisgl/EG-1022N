@@ -68,15 +68,15 @@ magic -dnull -noconsole -rcfile ../gf180mcuC.magicrc drc_ext.tcl EG1022N_V2
 
 ## V1 layout (original)
 
-![Layout](https://raw.githubusercontent.com/ellisgl/EG-1022N/refs/heads/main/layout.png)
-![Layout2](https://raw.githubusercontent.com/ellisgl/EG-1022N/refs/heads/main/layout2.png)
-![Layout3](https://raw.githubusercontent.com/ellisgl/EG-1022N/refs/heads/main/layout3.png)
+![Layout](V1/layout.png)
+![Layout2](V1/layout2.png)
+![Layout3](V1/layout3.png)
 
-The original layout (`NPN_BJT_SYMBOL_TRANSISTOR.mag`) is kept for reference. Analysis found:
+The original layout is kept in `V1/` for reference (`V1/NPN_BJT_SYMBOL_TRANSISTOR.mag`; open it from that folder with `magic -rcfile ../gf180mcuC.magicrc`). Analysis found:
 - The emitter N+ is butted against the base P+ on all sides. With GF180's default salicide, this
   shorts emitter to base, so the device would not work as a transistor.
 - Magic tagged the device `npn_10p00x10p00` only through the extraction rule's error fallback. The
-  real emitter is 2.94 um2, so `NPN_BJT_SYMBOL_TRANSISTOR.spice` does not describe it.
+  real emitter is 2.94 um2, so `V1/NPN_BJT_SYMBOL_TRANSISTOR.spice` does not describe it.
 - Most of the diagonal collector N+ stripe sits on the P-base instead of the deep N-well, forming an
   extra base-collector diode.
 - The filled P-base disc (853 um2) gives C_BC of about 343 fF. Even with the emitter gap fixed,
