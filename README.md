@@ -43,6 +43,18 @@ Not yet checked: the foundry KLayout DRC deck, density, and antenna rules. The d
 | R_B / R_C | ~160 / ~14 ohm | 137 / 13 ohm |
 | fmax estimate (100 uA) | ~2.9 GHz | ~4.3 GHz |
 
+![DC performance](docs/perf_dc.png)
+
+V2's current gain tracks the stock 0.54×16 device it extracts as. The V1 curve is the original disc
+layout with its emitter gap fixed; it peaks at a lower current because its emitter is smaller.
+
+![Speed and junction capacitance](docs/perf_speed.png)
+
+Drawing the P-base only under the strokes cuts base–collector capacitance from 343 fF (V1 disc) to
+65 fF. That is what lifts V2's fT close to the stock device's.
+
+![Output characteristics](docs/perf_output.png)
+
 The DC behaviour matches the stock device. The extracted netlist uses the stock model, which is fine
 for LVS. For realistic simulation, use the `eg1022n_v2` subcircuit in `sim/eg1022n.lib`; it scales
 C_BC, C_CS, R_B and R_C to the drawn geometry.
@@ -58,7 +70,8 @@ forward transit time, so fT figures are capacitance-limited upper bounds.
 - `gen/EG1022N_V2_lvs.spice` (LVS netlist), `gen/EG1022N_V2.spice` (with parasitic capacitors)
 - `gen/drc_ext.tcl`: runs DRC, extraction and GDS output in Magic
 - `sim/eg1022n.lib`: geometry-scaled models (`eg1022n_v2`, plus V1 variants)
-- `sim/*.py`: geometry analysis, model fitting and ngspice testbenches; `sim/*.png`: plots
+- `sim/*.py`: geometry analysis, model fitting and ngspice testbenches; `sim/*.png`: analysis plots
+- `sim/readme_plots.py`: builds the README figures in `docs/` (run after `run.py`, `run2.py` and `analyze.py`)
 
 Rebuild:
 ```sh
